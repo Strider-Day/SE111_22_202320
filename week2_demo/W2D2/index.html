@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Katie Truchon, the coolest" >
+    <meta name="description" content="W2D2 Bio Assignment Demo" >
+    
+    <title>W2 | Bio</title>
+
+    <!--IN-DOCUMENT STYLING-->
+    <style>
+        /*in here we write in CSS*/
+        /*SELECTING in CSS & Javascript: select specific element(s) on a page
+            *by ELEMENT type       ex: body, div, p
+            *by ID attribute       ex: #wrapper, #nav, #footer
+            *by CLASS attribute    ex: coming in week 3...
+
+
+        */
+
+        div {
+            border:1px solid black;
+            padding:10px; /*adds space between content and border of element*/
+            margin:5px; /*adds space between elemts and others*/
+        }
+        
+        #nav, #footer {
+            background-color:lightgrey
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <!--Header-->
+        <h1>Andrew Rockwell</h1>
+
+        <!--NAV-->
+        <div id="nav">
+
+            <!--EXTERNAL LINK: a link to a page outside your website-->
+            <a href="https://www.meca.edu" target="_blank">Visit MECA</a>
+
+            <!--INTERNAL LINK: a link to a page inside of your website/root folder-->
+            <!--RELATIVE PATH-->
+            <a href="page2.html">Page 2</a>
+
+            <!--IN PAGE JUMP LINK: a link to another section within the current page-->
+            <a href="#bio">BIO</a>
+            <a href="#schools">SCHOOLS</a>
+            <a href="#hobbies">HOBBIES</a>
+            <a href="#footer">Bottom of Page</a>
+
+
+        </div> <!--nav-->
+
+        <!--BIO-->
+        <div id="bio">
+
+            <h2>About Me</h2>
+
+            <p>Can a man still be <b>brave</b> if he’s afraid? That is the <i>only time</i> a man can be brave.A forked purple lightning bolt, on black field speckled with four-pointed stars. Winter is coming. You know nothing, Jon Snow. Pay the iron price. Unbowed, Unbent, Unbroken. It's <b><u>ten thousand miles</u></b> between Kings landing and the wall. It's ten thousand miles between Kings landing and the wall.</p>
+
+            <!--REMOTE image links (absolute paths) BOOOOOOO!! BAD!!-->
+            <img src="https://static.wikia.nocookie.net/gameofthrones/images/5/5c/Eddard_1x01.jpg/revision/latest/scale-to-width-down/270?cb=20120511213934" alt="Eddard Stark, Warden of the North" style="width:300px" title="ITS A SWARD">
+
+            <!--RELATIVE image link (relative path) must be stored in root folder-->
+            <img src="images/stormsEnd.jpg" alt="Storm's End castle in spring time" style="width:500px">
+
+
+        </div> <!--bio-->
+
+        <!--SCHOOLS-->
+        <div id="schools">
+            <h2>Schools</h2>
+
+            <ol>
+                <li>school 1</li>
+                <li>school 2</li>
+                <li>school 3</li>
+            </ol>
+
+            <img src="images/meca.jpg" alt="MECA Porteous Building" style="width:500px">
+
+        </div> <!--schools-->
+
+        <!--HOBBIES-->
+        <div id="hobbies">
+
+            <h2>Hobbies</h2>
+
+            <ul>
+                <li>hobby 1</li>
+                <li>hobby 2</li>
+                <li>hobby 3</li>
+            </ul>
+
+
+        </div> <!--hobbies-->
+
+        <!--FOOTER-->
+        <div id="footer">
+            <a href="#nav">Back to Top</a>
+            <br>
+            <p>&copy; A Rockwell | SE111 | Winter 2023</p>
+            <br>
+            <!--VALIDATION SCREENSHOT-->
+            <img src="images/Screenshot 2023-01-19 132930.png" alt="validation of page">
+
+        </div> <!--footer-->
+
+
+    </div>
+</body>
+</html>
