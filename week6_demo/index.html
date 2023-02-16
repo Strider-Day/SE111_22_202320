@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andrew Rockwell">
+    <meta name="description" content="Week 6 Demo">
+    <title>W6 | Intro to JS</title>
+
+    <style>
+        /*css in here*/
+
+    </style>
+</head>
+<body>
+    <!--ideally, we should have some sort of HTML int he file-->
+    <h1>Week 6 Intro Demo | Javascript</h1>
+    <!--<script> tags almost always go after any pre-written HTML (ie at the end of the <body>)-->
+    <!--IN DOCUMENT JAVASCRIPT below-->
+
+    <script>
+        //everything inside of the <script> tags MUST be written in JAVASCRIPT
+
+        //creating (declaring) a variable -- keyword
+        var num1 = 10
+        var num2 = 7
+        
+        //cannot use num1 or num2 until they have been assigned data (=)
+        //variable assignment --> DEFINITION
+
+        var sum = num1 + num2 //comments take up the rest of the line when written this way
+
+        //OUTPUT --> displaying data out of the program
+        //output display for testing --> console.log()
+        console.log(num1) //displaying 1 stored value
+
+        /* console.log() is only for the developer and for testing to access the developer tools:
+            *hit F12 on Windows/PC
+            *click into the developer tools from the browser menu > more tools >developer tools
+        */
+        
+        //highlight lines > CTRL + K + C comments all highlighted lines
+        //highlight lines > CTRL + K + U uncomments all highlighted lines
+
+        console.log(num1, num2, sum) //display multiple stored values
+        console.log("hello world!") //display message only
+        console.log(num1 + " + " + num2 + " = " + sum) //traditional string message mixed with stored value
+
+        //literal strings --> these use ` ` not ' '
+        //${VAR} displays stored values from var names
+        console.log(`${num1} + ${num2} = ${sum.toFixed(2)}`)
+
+        //output display for user --> alert()
+        //alert() --> print() in python
+        //alert(`the sum is: ${sum}!`)
+        console.log("HI!")
+        //alert("HELLO!")
+        console.log("goodbye")
+
+        //escape sequences also work in strings " ", ' ', ` `
+        //\t --> tab space , \n --> new line
+
+        //INPUT --> gaining data from the user
+        //prompt() --> input() in PYTHON
+        //prompt() always returns STRINGS --> cast as a Number()
+        var tip = Number(prompt(`Hello World! \nThe sum is $${sum.toFixed(2)}! \nEnter a number to add as a tip: $`))
+
+        var total = sum + tip
+        alert(`Your total with tip is now: $${total.toFixed(2)}`)
+
+        
+
+    </script>
+
+
+</body>
+</html>
