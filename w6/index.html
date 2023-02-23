@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andrew Rockwell">
+    <meta name="description" content="w6 HW">
+    <title>W6 | Javascript Pay Calculator</title>
+</head>
+<body>
+
+    <h1>Javascript Pay Calculator</h1>
+
+    <script>
+
+        var tax = .2
+
+        var hours = Number(prompt(`How many hours have you worked this 2 week period?`))
+
+        var wage = Number(prompt(`What is your Hourly Wage?`))
+
+        console.log("tax =", tax)
+        console.log("hours worked =", hours)
+        console.log("Hourly Wage = $", wage)
+
+        var gross = wage * hours
+
+        var taxamt = gross * tax
+
+        var netpay = gross - taxamt
+
+        alert(`Gross Pay: $${gross.toFixed(2)}\nUncle Sam's Share: $${taxamt.toFixed(2)}\nNet Pay: $${netpay.toFixed(2)}`)
+
+        console.log(`Gross Pay: $${gross.toFixed(2)}`)
+        console.log(`Uncle Sam's Share: $${taxamt.toFixed(2)}`)
+        console.log(`Net Pay: $${netpay.toFixed(2)}`)
+
+    </script>
+    
+
+    <img src="images/ver_w6.png" alt="Homework Verification" style="width:400px">
+</body>
+</html>
