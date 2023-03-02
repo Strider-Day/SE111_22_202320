@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andrew Rockwell">
+    <meta name="description" content="Week 8 demo Javascript data structures">
+
+    <title>W8 Demo JS Data Structures</title>
+</head>
+<body>
+    <h1>W8 Javascript Demo | Array's and Objects</h1>
+
+    <div id="output">
+        <!--eventually we will write info in here via JS to display our page-->
+    </div>
+    <!--in document javascript-->
+    <script>
+        //basic key and value pair --> variable name = data value
+        var name = "Andrew"
+        console.log(name)
+
+        //ARRAYS-----------------------------------------------------------
+
+        //create a populated array -- declaration + assigment
+        var people = ["Andrew", "Katie", "Emma", "Alex", "Danny"]
+
+        console.log(people) //display the single array
+        console.log(people[0]) //access single value --> name + key [index] = single value
+
+        //single values from arrays can be stored to vars
+        var firstname = people[0]
+        console.log(firstname)
+
+        console.log(`the length of the people array is: ${people.length}`)
+
+        //how to add more names to the people array
+        people[5] = `T.J`
+        console.log(people)
+
+        //we can use the inherent .push() to add new values (available to all arrays)
+        people.push(`Ryan`) //in PYTHON --> listname.append()
+        console.log(people)
+
+        //ask user to supply a value to add to the array
+        people.push(prompt(`Enter a name to add to the array: `))
+        console.log(people)
+
+        //parallel arrays --> multiple arrays with seperate data collections, where data from each "belong" together and stay "connected" via their position/index [key!]
+        //data across multiple arrays is connected by matching INDEX
+        var color = [`black`, `blue`, `gray`, `red`, `orange`, `blue`, `green`]
+
+        console.log(`${people[2]}'s favorite color is ${color[2]}`)
+
+        //automate population -- like for file handling in python
+        //start with empty array
+        var htmlclass = []
+
+        //process an entire array (or collection of data at once)
+        //ARRAY PROCESSING --> FOR LOOP (standard - for loop)
+        //let only lets index exist in for loop
+        for(let index = 0; index < people.length; index++) //index starts at 0, checks comparative statement, then increases by 1 after every loop
+        {
+            //below occurs to EVERY value in the array
+            console.log(`INDEX ${index}: ${people[index]}'s favorite color is ${color[index]}`)
+            htmlclass.push(`SE111.22`)
+        }
+
+        console.log(`NAME\tCOLOR\tCLASS`)
+        for(let index = 0; index < people.length; index++)
+        {
+            
+            console.log(`${people[index]}\t${color[index]}\t${htmlclass[index]}`)
+            
+        }
+
+        //associative arrays - instead of index, WE create a key string name as the index
+        var associativepeople = []
+        associativepeople[`first`] = `Andrew`
+        associativepeople[`last`] = `Rockwell`
+        associativepeople[`dog`] = `Teddy`
+
+        //access a value with data structure --> name + key = value
+        //standard array arrayname[index] = value
+        console.log(associativepeople[`dog`]) //displays `Teddy`
+
+        //OBJECTS------------------------------------------------------------------
+        //create a new object - mixed data types of information that is all related to one main/core object
+        //object key --> property
+        var person1 = {
+            first: `Andrew`,
+            last: `Rockwell`,
+            haspets: true,
+            height: 64,
+            classes: [`SE111.02`, `SE111.22`, `SE111.68`, `GMW261.05`],
+            pets: {
+                dogs: [`Teddy`, `Henri`],
+                cats: [`Jack`]
+            },
+        //function stred as a property in an object --> .METHOD()
+        greeting: function() {
+            alert(`HI there ${this.first} ${this.last}!`)
+        }
+        }
+
+        console.log(person1) //entire object and all properties + values
+        //access single values within object -- DOT SYNTAX
+        //object.property -- REMEMBER: property is key to accessing value
+        console.log(person1.height) // shows '64' in console
+        console.log(person1.classes)
+        console.log(person1.classes[1])
+        console.log(person1.pets.dogs[0])
+        console.log(person1.greeting())
+
+        var person2 = {
+            first: `Didier`,
+            last: `Haruon`,
+            haspets: true,
+            height: 72,
+            classes: [`SE111.22`],
+            pets: {
+                dogs: [`Yuki`],
+                cats: [`Levi`, `Jiraiya`]
+            },
+        //function stred as a property in an object --> .METHOD()
+        greeting: function() {
+            alert(`HI there ${this.first} ${this.last}!`)
+        }
+        }
+
+        console.log(person2.classes[0])
+        console.log(person2.pets.dogs[0])
+        console.log(person2.greeting())
+
+        person2.eyecolor = `brown`
+        console.log(person2)
+
+        //processing objects
+        //OBJECTS use the 'for key in obj' loop
+        for(let key in person1) 
+        {
+            console.log(`${key}: ${person1[key]}`)
+            //key represents the property name
+            //person1[key] gives access to the value 
+            //person1[`first`] = "Andrew"
+            console.log(`${person1[`first`]}`)
+        }
+
+        //NOTES FOR THE W8 ASSIGNMENTS------------------------------------------
+
+        //create an array ALREADY POPULATED with person1 and person2 object
+        //NOTE: in the HW, you are creating an EMPTY array
+        var humans = [
+            person1,
+            person2
+        ]   
+
+
+        //create a new object to add properties and values
+        var person3 = {
+            first:  `Ryan`,
+            last: `Kelly`,
+            haspets: true,
+            height: 71,
+            classes: [`SE111.02`],
+            pets: {
+                cats: [`Buddy`]
+            },
+            greeting: function() {
+                alert(`Hey ${this.first}!`)
+            }
+        }
+
+        //add object to the array
+        humans.push(person3) //NOW: humans[2] = person3
+
+        //in order to process a data structure (array) populated with data structures (objects), we need ... LOOPCEPTION or a loop within a loop
+
+        for(let i = 0; i < humans.length; i++)
+        {
+            //this outter loop moves through diff values in the ARRAY
+            console.log(`INFO FOR: ${humans[i].first}: `)
+            //since they are objects, we need a key in obj loop
+            for(let key in humans[i])
+            {
+                //this loop displays each key + value pair within the current object, humans[i]
+                console.log(`${key}: ${humans[i][key]}`)
+            }
+
+            console.log(`-----------------`)
+
+        }
+
+
+        //write this info to the HTML page!
+        //prep an empty string to hold content that will go to page
+        var output = ``
+
+        for(let i = 0; i < humans.length; i++)
+        {
+            //this outter loop moves through diff values in the ARRAY
+            output += `<h3>INFO FOR: ${humans[i].first}: </h3>`
+            //since they are objects, we need a key in obj loop
+            for(let key in humans[i])
+            {
+                //this loop displays each key + value pair within the current object, humans[i]
+                output += `<p><b>${key}:</b> ${humans[i][key]}</p>`
+            }
+
+            output += `<br>`
+
+        }
+
+        //actually write the new string to the HTML Page (and replace any old info)
+        document.querySelector(`#output`).innerHTML = output
+
+    </script>
+
+</body>
+</html>
