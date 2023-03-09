@@ -39,8 +39,9 @@
     <script>
 	
 		//Store the elements (tags) in variables
-		var fname = document.querySelector(`#first`).value
-		var lname = document.querySelector(`#last`).value
+		var fname = document.querySelector(`#first`)
+		var lname = document.querySelector(`#last`)
+		var button = document.querySelector(`#button`)
 
 		//Make an array to store the people
 		var people = []
@@ -73,8 +74,8 @@
 				//2. last: will be a string that uses the last Input's value
 
             var person = {
-				first: fname,
-				last: lname
+				first: document.querySelector(`#first`).value,
+				last: document.querySelector(`#last`).value
 
             }//end of person object
 
@@ -115,7 +116,7 @@
 					//Output will resemble:
 					//FIRST: Ivan
 					//LAST: Drago
-				
+					output += `<p>${key.toUpperCase()}: ${people[i][key]}</p>`
 
                 }
                 //add a <hr> to the output at the end of this outter loop so a horizontal rule is displayed inbetween each person being displayed to the screen.
@@ -129,7 +130,7 @@
 				
 			console.log(output)
 
-
+			document.querySelector(`#output`).innerHTML = output
 		}
 	
     </script>
