@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Andrew Rockwell">
+<meta name="description" content="w9 Homeowrk">
+<title>Week 9 Homework</title>
+<style type="text/css">
+	.border{border:1px solid black;}
+</style>
+</head>
+
+<body>
+
+
+	<script type="text/javascript">
+		//Use this Array of objects to complete the assignment.
+		var people =[
+			{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
+			{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
+			{first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit" },
+			{first:"Kevin", last:"McCallister", credit:"Home Alone" },
+			{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
+			{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
+			{first:"Marion", last:"Cobretti", credit:"Cobra" }
+		]
+
+		var body = document.querySelector(`body`)
+
+		for(let i = 0; i < people.length; i++)
+		{
+			var tempdiv = document.createElement(`div`)
+			tempdiv.setAttribute(`id`, `${i}`)
+			tempdiv.setAttribute(`class`, `border`)
+
+			for(key in people[i])
+			{
+				var p = document.createElement(`p`)
+				var htext = document.createTextNode(`${key.toUpperCase()}: ${people[i][key]}`)
+
+				p.appendChild(htext)
+				tempdiv.appendChild(p)
+
+			}
+
+			body.appendChild(tempdiv)
+
+		}
+		
+	</script>
+
+</body>
+
+</html>
